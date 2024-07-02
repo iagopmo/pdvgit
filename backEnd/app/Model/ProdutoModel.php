@@ -42,7 +42,7 @@ class ProdutoModel
         }
     }
 
-    public function criarProduto(string $nome, float $preco_custo, float $preco_venda, int $tipo_produto_id): bool
+    public function criarProduto($nome, $preco_custo, $preco_venda, $tipo_produto_id): bool
     {
         $stmt = $this->pdo->prepare('INSERT INTO produtos (nome, preco_custo, preco_venda, tipo_produto_id) VALUES (:nome, :preco_custo, :preco_venda, :tipo_produto_id)');
         $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);

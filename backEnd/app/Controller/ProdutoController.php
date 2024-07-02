@@ -12,7 +12,8 @@ class ProdutoController
     public function listarProdutos($id)
     {
         $produtos = $this->produtoModel->buscar($id);
-        return $produtos;
+        // var_dump($produtos);        
+        return json_encode($produtos);
     }
 
     public function atualizarProduto($id, $nome, $preco_custo, $preco_venda)
