@@ -11,13 +11,13 @@ class ProdutoController
     }
     public function listarProdutos($id)
     {
-        $produtos = $this->produtoModel->buscar($id);
-        // var_dump($produtos);        
-        return json_encode($produtos);
+        $produtos = $this->produtoModel->buscar($id);          
+        return $produtos;
     }
 
     public function atualizarProduto($id, $nome, $preco_custo, $preco_venda)
     {   
+        // var_dump($nome);
         $resultado = $this->produtoModel->atualizarProduto($id, $nome , $preco_custo, $preco_venda);
         return $resultado;
     }
